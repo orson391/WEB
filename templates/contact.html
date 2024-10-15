@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Contact
+{% endblock title %}
+
+
+{% block body %}
+<div class="signup-container">
+    <h2>Sign Up</h2>
+    <form action="/contact" method="POST">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+
+        <input type="submit" value="Sign Up">
+    </form>
+</div>
+{% endblock body %}
+
